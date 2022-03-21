@@ -2,16 +2,16 @@ import React from 'react';
 import { Breadcrumb } from 'antd';
 import MainLayout from '../MainLayout';
 
-const Home = () => (
-  <MainLayout selected={['Home']}>
+const Challenge1 = () => (
+  <MainLayout selected={['Challenge1']}>
     <Breadcrumb style={{ margin: '16px 0' }}>
       <Breadcrumb.Item>App</Breadcrumb.Item>
-      <Breadcrumb.Item>Home</Breadcrumb.Item>
+      <Breadcrumb.Item>Challenge 1</Breadcrumb.Item>
     </Breadcrumb>
     <div className='site-layout-content'>
-      <h1>Carlos Sibalatani</h1>
+      <h1>Challenge 1</h1>
     </div>
   </MainLayout>
 );
 
-export default Home;
+export default Challenge1;
