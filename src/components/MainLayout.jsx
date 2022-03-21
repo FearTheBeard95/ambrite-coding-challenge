@@ -1,15 +1,18 @@
 import { Layout, Menu } from 'antd';
+import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 
 const { Header, Content, Footer } = Layout;
 const currentYear = new Date().getFullYear();
-const MainLayout = ({ children }) => (
+const MainLayout = ({ children, selected }) => (
   <Layout className='layout'>
     <Header>
       <div className='logo' />
-      <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
+      <Menu theme='dark' mode='horizontal' defaultSelectedKeys={selected}>
         {routes.map((route) => (
-          <Menu.Item key={route.to}>{route.name}</Menu.Item>
+          <Menu.Item key={route.key}>
+            <Link to={route.path}>{route.key}</Link>
+          </Menu.Item>
         ))}
       </Menu>
     </Header>

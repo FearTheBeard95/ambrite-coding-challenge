@@ -1,19 +1,25 @@
+import Home from '../components/pages/Home';
+
 const routes = [
   {
-    name: 'Home',
-    to: '/',
+    key: 'Home',
+    path: '/',
+    element: <Home />,
   },
   {
-    name: 'Challenge 1',
-    to: 'c1',
+    key: 'Challenge 1',
+    path: '/c1',
+    element: <Home />,
   },
   {
-    name: 'Challenge 2',
-    to: '/c2',
+    key: 'Challenge 2',
+    path: '/c2',
+    element: <Home />,
   },
   {
-    name: 'Challenge 3',
-    to: '/c3',
+    key: 'Challenge 3',
+    path: '/c3',
+    element: <Home />,
   },
 ];
 

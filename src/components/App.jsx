@@ -1,17 +1,16 @@
 import React from 'react';
-import { Breadcrumb } from 'antd';
 import '../App.less';
-import MainLayout from './MainLayout';
+import { Route, Routes } from 'react-router-dom';
+import NavRoutes from '../constants/routes';
 
 const App = () => (
-  <MainLayout>
-    <Breadcrumb style={{ margin: '16px 0' }}>
-      <Breadcrumb.Item>Home</Breadcrumb.Item>
-    </Breadcrumb>
-    <div className='site-layout-content'>
-      <h1>Carlos Sibalatani</h1>
-    </div>
-  </MainLayout>
+  <>
+    <Routes>
+      {NavRoutes.map((route) => (
+        <Route {...route} />
+      ))}
+    </Routes>
+  </>
 );
 
 export default App;
