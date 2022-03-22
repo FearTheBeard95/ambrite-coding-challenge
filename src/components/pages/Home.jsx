@@ -9,7 +9,7 @@ const Home = () => (
       <Breadcrumb.Item>Home</Breadcrumb.Item>
     </Breadcrumb>
     <div className='site-layout-content'>
-      <h1>Carlos Sibalatani</h1>
+      <h1>Home</h1>
     </div>
   </MainLayout>
 );
