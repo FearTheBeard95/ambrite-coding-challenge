@@ -5,7 +5,7 @@ import geoInfo from '../../utils/geo.json';
 import { useState } from 'react';
 
 const Challenge2 = () => {
-  const [dataSource, setDataSource] = useState([]);
+  const [dataSource, setDataSource] = useState(geoInfo);
   const [refLatitude, setLatitude] = useState('');
   const [refLongitude, setLongitude] = useState('');
 
