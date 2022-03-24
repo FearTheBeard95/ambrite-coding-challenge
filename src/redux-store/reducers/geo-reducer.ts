@@ -1,6 +1,5 @@
-import { GeoAction } from '../actions';
-import { GeoDataType } from '../action-type/get-data-type';
-import geoData from '../../utils/geo.json';
+import { GeoAction } from '../actions/geo-actions';
+import { GeoDataType } from '../action-type/geo-data-type';
 
 interface GeoState {
   geo: any[];

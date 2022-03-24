@@ -7,7 +7,11 @@ import { useState } from 'react';
 
 const Challenge3 = () => {
   const { testSet1, testSet2 } = p3Data;
-  const [dataSource] = useState(arrayUnion(testSet1, testSet2));
+  const [dataSource, setDataSource] = useState<Array<any>>([]);
+
+  const onExecute = () => {
+    setDataSource(arrayUnion(testSet1, testSet2));
+  };
 
   const columns = [
     { title: 'name', dataIndex: 'name', key: 'key' },
@@ -20,7 +24,11 @@ const Challenge3 = () => {
   ];
 
   return (
-    <MainLayout selected={['Challenge3']} title={'Challenge 3'}>
+    <MainLayout
+      selected={['Challenge3']}
+      title={'Challenge 3'}
+      onExecute={onExecute}
+    >
       <Table
         columns={columns}
         expandable={{

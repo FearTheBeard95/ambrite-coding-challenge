@@ -1,10 +1,10 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 
 const { Header, Content, Footer } = Layout;
 const currentYear = new Date().getFullYear();
-const MainLayout = ({ children, selected, title }: any) => (
+const MainLayout = ({ children, selected, title, onExecute }: any) => (
   <Layout className='layout'>
     <Header>
       <div className='logo' />
@@ -22,7 +22,14 @@ const MainLayout = ({ children, selected, title }: any) => (
         <Breadcrumb.Item>{title}</Breadcrumb.Item>
       </Breadcrumb>
       <div className='site-layout-content'>
-        <h1>{title}</h1>
+        <h1>
+          {title}{' '}
+          {onExecute && (
+            <Button type='primary' onClick={onExecute}>
+              Execute
+            </Button>
+          )}
+        </h1>
         {children}
       </div>
     </Content>

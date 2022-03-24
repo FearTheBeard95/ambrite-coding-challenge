@@ -33,7 +33,7 @@ const challenge3Files = [
 ];
 
 const Docs = () => (
-  <MainLayout selected={['Home']} title={'Documentation'}>
+  <MainLayout selected={['Docs']} title={'Documentation'}>
     <Typography>
       <Title>Introduction</Title>
       <Paragraph>

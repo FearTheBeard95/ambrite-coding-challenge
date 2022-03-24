@@ -1,4 +1,4 @@
-import { GeoDataType } from '../action-type/get-data-type';
+import { GeoDataType } from '../action-type/geo-data-type';
 
 interface GetGeoAction {
   type: GeoDataType.GET_GEO_DATA;

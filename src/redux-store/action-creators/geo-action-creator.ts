@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import { Dispatch } from 'redux';
-import { GeoAction } from '../actions';
-import { GeoDataType } from '../action-type/get-data-type';
+import { GeoAction } from '../actions/geo-actions';
+import { GeoDataType } from '../action-type/geo-data-type';
 
 export function getGeoData(data: any[]) {
   return (dispatch: Dispatch<GeoAction>) => {

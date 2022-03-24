@@ -1,6 +1,6 @@
 import { Typography, Space } from 'antd';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 export const ChallengeDocumentation = (props: any) => {
   const { challenge, files, children } = props;
