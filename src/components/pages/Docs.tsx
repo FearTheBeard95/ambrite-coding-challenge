@@ -1,4 +1,4 @@
-import { Breadcrumb, Typography } from 'antd';
+import { Typography } from 'antd';
 import MainLayout from '../MainLayout';
 import { ChallengeDocumentation } from '../ChallengeDocumentation';
 
