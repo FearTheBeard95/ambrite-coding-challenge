@@ -60,6 +60,10 @@ const Challenge2 = () => {
               name='latitude'
               onChange={(e) => onChangeLatitude(e.target.value)}
               value={refLatitude}
+              type='number'
+              step={'0.0000000000000001'}
+              max={90.9999999999999999}
+              min={-90.99999999999999999}
             />
             <Input
               style={{ width: '30%' }}
@@ -67,6 +71,10 @@ const Challenge2 = () => {
               name='longitude'
               onChange={(e) => onChangeLongitude(e.target.value)}
               value={refLongitude}
+              type='number'
+              step={'0.0000000000000001'}
+              max={180.9999999999999999}
+              min={-180.99999999999999999}
             />
             <Button type='primary' htmlType='submit'>
               Sort

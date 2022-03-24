@@ -4,11 +4,10 @@ import MainLayout from '../MainLayout';
 import arrayUnion from '../../utils/data-merge';
 import p3Data from '../../utils/p3Data.json';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 const Challenge3 = () => {
   const { testSet1, testSet2 } = p3Data;
-  const [dataSource, setDataSource] = useState(arrayUnion(testSet1, testSet2));
+  const [dataSource] = useState(arrayUnion(testSet1, testSet2));
 
   const columns = [
     { title: 'name', dataIndex: 'name', key: 'key' },
@@ -19,20 +18,6 @@ const Challenge3 = () => {
     { title: 'field', dataIndex: 'key', key: 'key' },
     { title: 'value', dataIndex: 'value', key: 'key' },
   ];
-  // useEffect(() => {
-  //   // eslint-disable-next-line no-unused-vars
-  //   let isMounted = true;
-  //   const { testSet1, testSet2 } = p3Data;
-
-  //   arrayUnion(testSet1, testSet2).then((union) => {
-  //     console.log(union);
-  //     return setDataSource(union);
-  //   });
-
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, []);
 
   return (
     <MainLayout selected={['Challenge3']}>

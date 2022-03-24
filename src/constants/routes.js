@@ -1,13 +1,13 @@
 import Challenge1 from '../components/pages/Challenge1';
 import Challenge2 from '../components/pages/Challenge2';
 import Challenge3 from '../components/pages/Challenge3';
-import Home from '../components/pages/Home';
+import Docs from '../components/pages/Docs';
 
 const routes = [
   {
-    key: 'Home',
+    key: 'Docs',
     path: '/',
-    element: <Home />,
+    element: <Docs />,
   },
   {
     key: 'Challenge1',
