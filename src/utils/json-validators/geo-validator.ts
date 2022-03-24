@@ -9,6 +9,8 @@ const schema = {
       format: 'coordinates',
     },
   },
+  required: ['ipv4', 'geo'],
+  additionalProperties: false,
 };
 
 const ajv = ajvInstance.compile(schema);

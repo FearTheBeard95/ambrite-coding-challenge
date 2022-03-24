@@ -10,6 +10,8 @@ const schema = {
     statecode: { type: ['string', 'null'] },
     meta: { type: 'string' },
   },
+  required: ['active', 'asn', 'countrycode', 'id', 'statecode', 'meta'],
+  additionalProperties: false,
 };
 
 const ajv = ajvInstance.compile(schema);
