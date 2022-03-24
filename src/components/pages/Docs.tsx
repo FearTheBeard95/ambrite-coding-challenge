@@ -37,7 +37,7 @@ const Docs = () => (
     <Typography>
       <Title>Introduction</Title>
       <Paragraph>
-        This is my submission for the coding challenge written in JavaScript and
+        This is my submission for the coding challenge written in TypeScript and
         JSX for the components. I used the UI framework{' '}
         <Link href='https://ant.design' target={'_blank'}>
           Ant Design
