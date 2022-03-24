@@ -17,13 +17,13 @@ Scripts
 
 Scripts
 
-- [ajv-instance.ts](src/utils/locations-sort.ts)
+- [locations-sort.ts](src/utils/locations-sort.ts)
 
 ### `Challenge 3`
 
 Scripts
 
-- [ajv-instance.ts](src/utils/data-merge.ts)
+- [data-merge.ts](src/utils/data-merge.ts)
 
 ## Installation
 
