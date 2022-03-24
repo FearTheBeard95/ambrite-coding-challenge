@@ -43,7 +43,7 @@ const Docs = () => (
           Ant Design
         </Link>{' '}
         to build the frontend to display the solutions of the 3 challenges given
-        and used redux to manage the state of challenge 2.
+        and used redux to manage the state of the application
       </Paragraph>
       <Paragraph>
         Below are docs showing the files with the code used to solve the
