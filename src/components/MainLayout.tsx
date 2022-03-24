@@ -1,10 +1,10 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
 import routes from '../constants/routes';
 
 const { Header, Content, Footer } = Layout;
 const currentYear = new Date().getFullYear();
-const MainLayout = ({ children, selected }: any) => (
+const MainLayout = ({ children, selected, title }: any) => (
   <Layout className='layout'>
     <Header>
       <div className='logo' />
@@ -16,7 +16,16 @@ const MainLayout = ({ children, selected }: any) => (
         ))}
       </Menu>
     </Header>
-    <Content style={{ padding: '0 50px' }}>{children}</Content>
+    <Content style={{ padding: '0 50px' }}>
+      <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb.Item>App</Breadcrumb.Item>
+        <Breadcrumb.Item>{title}</Breadcrumb.Item>
+      </Breadcrumb>
+      <div className='site-layout-content'>
+        <h1>{title}</h1>
+        {children}
+      </div>
+    </Content>
     <Footer style={{ textAlign: 'center' }}>
       {`Ant Design ©${currentYear} Created by Carlos Sibalatani`}
     </Footer>
