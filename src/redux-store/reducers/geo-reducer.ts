@@ -23,5 +23,3 @@ function reducer(state: GeoState = initialState, action: GeoAction): GeoState {
 }
 
 export default reducer;
-
-export type RootState = ReturnType<typeof reducer>;

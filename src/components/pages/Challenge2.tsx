@@ -4,20 +4,17 @@ import calculateDistance from '../../utils/locations-sort';
 import geoInfo from '../../utils/geo.json';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../redux-store/reducers/geo-reducer';
+import { RootState } from '../../redux-store/reducers';
 import { bindActionCreators } from 'redux';
 import * as geoActionCreators from '../../redux-store/action-creators/geo-action-creator';
 
 const Challenge2 = () => {
   const [refLatitude, setLatitude] = useState('');
   const [refLongitude, setLongitude] = useState('');
-  const state = useSelector((store: RootState) => store.geo);
+  const state = useSelector((store: RootState) => store.geoReducer.geo);
   const [dataSource, setDataSource] = useState<Array<any>>([]);
   const dispatch = useDispatch();
-  const { getGeoData, setGeoData } = bindActionCreators(
-    geoActionCreators,
-    dispatch
-  );
+  const { setGeoData } = bindActionCreators(geoActionCreators, dispatch);
   const onChangeLatitude = (value: string) => {
     setLatitude(value);
   };
@@ -34,12 +31,6 @@ const Challenge2 = () => {
       setLongitude('');
     });
   };
-
-  useEffect(() => {
-    if (state.length < 1) {
-      getGeoData(geoInfo);
-    }
-  });
 
   useEffect(() => {
     setDataSource(state || []);
