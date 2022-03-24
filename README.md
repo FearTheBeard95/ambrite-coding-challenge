@@ -4,12 +4,7 @@
 
 This is an application built using React to solve the coding challenges given by Ambrite
 
-## Scripts for challenges used
-
-- [`Challenge 1`](#Challenge 1)
-- [`Challenge 2`](#Challenge 2)
-- [`Challenge 3`](#Challenge 3)
-
+## Scripts written for the challenges
 ### `Challenge 1`
 
 Scripts
