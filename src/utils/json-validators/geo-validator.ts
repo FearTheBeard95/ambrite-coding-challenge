@@ -14,8 +14,5 @@ const schema = {
 const ajv = ajvInstance.compile(schema);
 
 export default async function geo_validator(file: any[]) {
-  return await {
-    valid: file.filter((json: object) => ajv(json) === true),
-    invalid: file.filter((json: object) => ajv(json) === false),
-  };
+  return file.filter((json: object) => ajv(json) === true);
 }
