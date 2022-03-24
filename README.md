@@ -14,17 +14,21 @@ This is an application built using React to solve the coding challenges given by
 
 Scripts
 
-[ajv-instance.ts](src/utils/json-validators/ajv-instance.ts)
-[data-validator.ts](src/utils/json-validators/data-validator.ts)
-[geo-validator.ts](src/utils/json-validators/geo-validator.ts)
+- [ajv-instance.ts](src/utils/json-validators/ajv-instance.ts)
+- [data-validator.ts](src/utils/json-validators/data-validator.ts)
+- [geo-validator.ts](src/utils/json-validators/geo-validator.ts)
 
 ### `Challenge 2`
 
-This method was used to search for books from the API that the user can add to their library
+Scripts
+
+- [ajv-instance.ts](src/utils/locations-sort.ts)
 
 ### `Challenge 3`
 
-This method was used to update the current state of each on the user shelve, this was to make sure the state of the books was up to date when refreshing the application
+Scripts
+
+- [ajv-instance.ts](src/utils/data-merge.ts)
 
 ## Installation
 
