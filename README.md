@@ -1,4 +1,4 @@
-#  (Ambrite Coding Challenge)
+#  (Ambrite Coding Challenge - Carlos Sibalatani)
 
 ## Description
 
