@@ -14,9 +14,9 @@ const schema = {
 
 const ajv = ajvInstance.compile(schema);
 
-export default async function data_validator(file) {
-  return await {
-    valid: file.filter((json) => ajv(json) === true),
-    invalid: file.filter((json) => ajv(json) === false),
+export default async function data_validator(file: any[]) {
+  return {
+    valid: file.filter((json: object) => ajv(json) === true),
+    invalid: file.filter((json: object) => ajv(json) === false),
   };
 }

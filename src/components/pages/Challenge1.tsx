@@ -1,4 +1,3 @@
-import React from 'react';
 import { Breadcrumb, Typography } from 'antd';
 import MainLayout from '../MainLayout';
 import dataJSON from '../../utils/data.json';
@@ -23,22 +22,18 @@ const Challenge1 = () => {
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
-    let isMounted = true;
-    geo_validator(geoJSON).then((results) => {
+    geo_validator(geoJSON).then((results: any) => {
       setResults1({
         valid: results.valid,
         invalid: results.invalid,
       });
     });
-    data_validator(dataJSON).then((results) => {
+    data_validator(dataJSON).then((results: any) => {
       setResults2({
         valid: results.valid,
         invalid: results.invalid,
       });
     });
-    return () => {
-      isMounted = false;
-    };
   }, []);
   return (
     <MainLayout selected={['Challenge1']}>

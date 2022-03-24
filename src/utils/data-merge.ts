@@ -1,7 +1,7 @@
-function arrayUnion(array1, array2) {
+function arrayUnion(array1: any[], array2: any[]) {
   const map = new Map();
-  array1.forEach((item) => map.set(item.name, item));
-  array2.forEach((item) =>
+  array1.forEach((item: { name: string }) => map.set(item.name, item));
+  array2.forEach((item: { name: string }) =>
     map.set(item.name, { ...map.get(item.name), ...item })
   );
   const mergedArr = Array.from(map.values());

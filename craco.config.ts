@@ -1,4 +1,5 @@
-const CracoLessPlugin = require('craco-less');
+// @ts-ignore
+import CracoLessPlugin from 'craco-less';
 
 module.exports = {
   plugins: [

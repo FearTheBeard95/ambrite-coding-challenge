@@ -2,33 +2,55 @@ import { Breadcrumb, Button, Form, Input, Table } from 'antd';
 import MainLayout from '../MainLayout';
 import calculateDistance from '../../utils/locations-sort';
 import geoInfo from '../../utils/geo.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux-store/reducers/geo-reducer';
+import { bindActionCreators } from 'redux';
+import * as geoActionCreators from '../../redux-store/action-creators/geo-action-creator';
 
 const Challenge2 = () => {
-  const [dataSource, setDataSource] = useState(geoInfo);
   const [refLatitude, setLatitude] = useState('');
   const [refLongitude, setLongitude] = useState('');
-
-  const onChangeLatitude = (value) => {
+  const state = useSelector((store: RootState) => store.geo);
+  const [dataSource, setDataSource] = useState<Array<any>>([]);
+  const dispatch = useDispatch();
+  const { getGeoData, setGeoData } = bindActionCreators(
+    geoActionCreators,
+    dispatch
+  );
+  const onChangeLatitude = (value: string) => {
     setLatitude(value);
   };
 
-  const onChangeLongitude = (value) => {
+  const onChangeLongitude = (value: string) => {
     setLongitude(value);
   };
 
   const onFinish = () => {
     const refCoords = `${refLatitude},${refLongitude}`;
     calculateDistance(geoInfo, refCoords).then((dataSource) => {
-      setDataSource(dataSource);
+      setGeoData(dataSource);
+      setLatitude('');
+      setLongitude('');
     });
   };
 
-  const columns = [
+  useEffect(() => {
+    if (state.length < 1) {
+      getGeoData(geoInfo);
+    }
+  });
+
+  useEffect(() => {
+    setDataSource(state || []);
+  }, [state]);
+
+  const columns: any[] = [
     {
       title: 'ipv4',
       dataIndex: 'ipv4',
       key: 'ipv4',
+      sorter: (a: any, b: any) => a.ipv4.localeCompare(b.ipv4),
     },
     {
       title: 'geo',
@@ -41,6 +63,7 @@ const Challenge2 = () => {
       dataIndex: 'distance',
       key: 'distance',
       responsive: ['md'],
+      sorter: (a: any, b: any) => a.distance - b.distance,
     },
   ];
 
@@ -82,7 +105,11 @@ const Challenge2 = () => {
           </Input.Group>
         </Form>
         <br />
-        <Table dataSource={dataSource} columns={columns} />
+        <Table
+          dataSource={dataSource}
+          columns={columns}
+          rowKey={(record) => record.geo}
+        />
       </div>
     </MainLayout>
   );

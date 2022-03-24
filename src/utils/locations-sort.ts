@@ -1,6 +1,6 @@
 const calculateDistance = (
-  [latitude1, longitude1],
-  [latitude2, longitude2]
+  [latitude1, longitude1]: any[],
+  [latitude2, longitude2]: any[]
 ) => {
   const radLat1 = (Math.PI * latitude1) / 180;
   const radLat2 = (Math.PI * latitude2) / 180;
@@ -21,7 +21,7 @@ const calculateDistance = (
   return distance;
 };
 
-export default async function sortByDistance(file, refCoords) {
+export default async function sortByDistance(file: any[], refCoords: string) {
   const coordsWithDistance = file.map(({ ipv4, geo }) => ({
     key: ipv4,
     ipv4,

@@ -4,7 +4,7 @@ import routes from '../constants/routes';
 
 const { Header, Content, Footer } = Layout;
 const currentYear = new Date().getFullYear();
-const MainLayout = ({ children, selected }) => (
+const MainLayout = ({ children, selected }: any) => (
   <Layout className='layout'>
     <Header>
       <div className='logo' />

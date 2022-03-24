@@ -1,7 +1,5 @@
-import React from 'react';
 import { Breadcrumb, Space, Typography } from 'antd';
 import MainLayout from '../MainLayout';
-import { Link as To } from 'react-router-dom';
 
 const { Title, Paragraph, Text, Link } = Typography;
 const challenge1Files = [
@@ -116,7 +114,7 @@ const Docs = () => (
   </MainLayout>
 );
 
-const ChallengeDocumentation = (props) => {
+const ChallengeDocumentation = (props: any) => {
   const { challenge, files, children } = props;
   return (
     <>
@@ -126,8 +124,8 @@ const ChallengeDocumentation = (props) => {
       <Paragraph>
         <Paragraph>
           <Space direction='vertical'>
-            {files.map((file, index) => (
-              <Text>
+            {files.map((file: any, index: number) => (
+              <Text key={index}>
                 <strong>
                   {index + 1}.{file.name}
                 </strong>{' '}
