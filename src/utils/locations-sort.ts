@@ -29,5 +29,7 @@ export default async function sortByDistance(file: any[], refCoords: string) {
     distance: calculateDistance(geo.split(','), refCoords.split(',')),
   }));
 
-  return coordsWithDistance.sort((a, b) => a.distance - b.distance);
+  return coordsWithDistance
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, 10);
 }
